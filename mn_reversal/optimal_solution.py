@@ -19,9 +19,10 @@ def reverse_between(head: ListNode, m: int, n: int) -> ListNode:
     new_list = None
     tail = curr_node
 
-    while n <= curr_pos <= m:
+    while n >= curr_pos >= m:
         next = curr_node.next
         curr_node.next = new_list
+        new_list = curr_node
         curr_node = next
         curr_pos += 1
 
